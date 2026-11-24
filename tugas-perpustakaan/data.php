@@ -18,7 +18,8 @@ $jumlah = mysqli_num_rows($hasil);
     <title>Data Anggota</title>
 </head>
 <body>
-    <table border = "1">
+    <h1>Data Anggota Perpustakaan</h1>
+    <table border = "1" cellpadding = "8" cellspacing = "0">
         <tr>
             <th>No</th><th>No Anggota</th><th>Nama</th><th>Email</th><th>No HP</th><th>Jenis Anggota</th><th>Alamat</th><th>Aksi</th>
         </tr>
@@ -37,11 +38,14 @@ $jumlah = mysqli_num_rows($hasil);
                 onsubmit="return confirm('Yakin ingin menghapus data ini?');">
                     <input type="hidden" name="id" value="<?php echo (int) $baris['id']; ?>">
                     <button type="submit" value="Hapus">Hapus</button>
+
                 </form>
             </td>
         </tr>
         <?php } ?>
-    </table>
+    </table><br>
+
+    <a href="form_anggota.php">Kembali ke Formulir</a>
 <?php mysqli_free_result($hasil); ?>
 </body>
 </html>
